@@ -1,6 +1,6 @@
 function Kit_Excel_LoadDraw
 
-[dRawData, ~, ~] = xlsread('ĞËÒµ¶¨Á¿_A¹É50ETFÆÚÈ¨²¨¶¯ÂÊÖ¸Êı_ÓÚÃ÷Ã÷20180228.xlsm');
+[dRawData, ~, ~] = xlsread('Aè‚¡50ETFæœŸæƒæ³¢åŠ¨ç‡æŒ‡æ•°_20180228.xlsm');
 
 nDateLag = 693962;
 
