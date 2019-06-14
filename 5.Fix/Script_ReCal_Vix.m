@@ -1,6 +1,6 @@
 clc
 clear all
-addpath('E:\3.¹¤×÷ÓëÊµÏ°\ÐËÒµÖ¤È¯\6.Ö¸Êý±àÖÆ\0.iVix\3.Protected')
+addpath('E:\0.iVix\3.Protected')
 
 %% Clean Data
 [~, ~, cRawData] = xlsread('OPUDLData.xlsx');
@@ -26,7 +26,7 @@ dClosePrice = cell2mat(dClosePrice);
 
 % Call or Put
 cRawType = cRawData(2 : end, 11);
-dType = strcmp(cRawType, 'ÈÏ¹º');
+dType = strcmp(cRawType, 'è®¤è´­');
 
 % Date2Expire
 dMatureDate = datenum(cRawData(2 : end, 15), 'yyyy.mm.dd');
@@ -136,7 +136,7 @@ parfor iTime = 1 : length(dTimeLine)
 end
 
 cDate = cellstr(datestr(dVix(:, 1), 'yyyy.mm.dd hh:MM:ss'));
-cFields = {'Ê±¼ä', 'ÈÏ¹ºVix', 'ÈÏ¹ÁVix', 'Vix'};
+cFields = {'æ—¶é—´', 'è®¤è´­Vix', 'è®¤æ²½Vix', 'Vix'};
 cData = num2cell(dVix(:, 2 : end));
 cResult = [cDate, cData];
 cResult = [cFields; cResult];
@@ -145,7 +145,7 @@ xlswrite('VxoResult.xlsx', cResult);
 
 function nVxo = Fun_Cal_VXO(nOptionDuration, nDirection, dOptionTemp)
 
-% ³éÈ¡ÁÙÊ±Êý¾ÝÕó
+% æŠ½å–ä¸´æ—¶æ•°æ®é˜µ
 dOptionInfo = dOptionTemp(dOptionTemp(:, 4) == nOptionDuration & dOptionTemp(:, 3) == nDirection, :);
 dTemp_Up = dOptionInfo(dOptionInfo(:, 2) >= dOptionInfo(:, 9), :);
 dTemp_Down = dOptionInfo(dOptionInfo(:, 2) < dOptionInfo(:, 9), :);
