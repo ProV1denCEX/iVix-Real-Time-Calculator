@@ -1,1 +1,1 @@
-start F:\1.AutoRun\Industry_Security_iVix_Push.xlsm
+start F:\1.AutoRun\iVix_Push.xlsm
