@@ -37,8 +37,8 @@ cSetupPlatform.Dir.Pic = [cd, '\2.Pic'];
 cSetupPlatform.Dir.Temp = [cd, '\4.Temp'];
 
 %% Mail
-cSetupPlatform.Mail.MailAdress = 'xyquantcta@sina.com';
+cSetupPlatform.Mail.MailAdress = 'quantcta@sina.com';
 cSetupPlatform.Mail.Mail2Sent = '475937844@qq.com';
-cSetupPlatform.Mail.MailPassword = 'xyquantcta';
+cSetupPlatform.Mail.MailPassword = 'quantcta';
 
 end
