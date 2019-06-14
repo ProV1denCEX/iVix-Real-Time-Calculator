@@ -1,13 +1,13 @@
-%% 0. È«¾Ö±äÁ¿
-sMailAdress = 'xyquantcta@sina.com';
-sMailPassword = 'xyquantcta';
+%% 0. å…¨å±€å˜é‡
+sMailAdress = 'quantcta@sina.com';
+sMailPassword = 'quantcta';
 sMail2Sent = {sMailAdress};
 
 %% 1. SMTP_Server Get
 nInd = find(sMailAdress == '@', 1);
 sSMTP_Server = ['smtp.', sMailAdress(nInd+1 : end)];
 
-%% 2. ·¢ËÍÓÊ¼ş
+%% 2. å‘é€é‚®ä»¶
 try
     setpref('Internet','SMTP_Server',sSMTP_Server);
     setpref('Internet','E_mail', sMailAdress);
@@ -17,7 +17,7 @@ try
     props = java.lang.System.getProperties;
     props.setProperty('mail.smtp.auth','true');
     
-    cAttachments = {['.\ĞËÒµ¶¨Á¿_A¹É50ETFÆÚÈ¨²¨¶¯ÂÊÖ¸Êı.xlsm']};
+    cAttachments = {['.\Aè‚¡50ETFæœŸæƒæ³¢åŠ¨ç‡æŒ‡æ•°.xlsm']};
     sSubject = ['Vix Index Push ', datestr(now, 'yyyy-mm-dd')];
     sContent = [];
     
@@ -26,9 +26,9 @@ try
     end
     
 catch err
-    disp('·¢ÉúÒì³£');
+    disp('å‘ç”Ÿå¼‚å¸¸');
     for i = 1:size(err.stack,1)
-        StrTemp = ['FunName£º',err.stack(i).name,' Line£º',num2str(err.stack(i).line)];
+        StrTemp = ['FunNameï¼š',err.stack(i).name,' Lineï¼š',num2str(err.stack(i).line)];
         disp(StrTemp);
     end
 end
