@@ -1,18 +1,13 @@
-%% 0. È«¾Ö±äÁ¿
-sMailAdress = 'xyquantcta@sina.com';
-sMailPassword = 'xyquantcta';
-sMail2Sent = {'475937844@qq.com', ...
-    'yumingming0918@126.com', ...
-    'dongj@yhfund.com.cn', ...
-    'ganmx@yhfund.com.cn', ...
-    'zhouyou@yhfund.com.cn', ...
-    'liup@yhfund.com.cn'};
+%% 0. å…¨å±€å˜é‡
+sMailAdress = 'quantcta@sina.com';
+sMailPassword = 'quantcta';
+sMail2Sent = {'475937844@qq.com''};
 
 %% 1. SMTP_Server Get
 nInd = find(sMailAdress == '@', 1);
 sSMTP_Server = ['smtp.', sMailAdress(nInd+1 : end)];
 
-%% 2. ·¢ËÍÓÊ¼ş
+%% 2. å‘é€é‚®ä»¶
 try
     setpref('Internet','SMTP_Server',sSMTP_Server);
     setpref('Internet','E_mail', sMailAdress);
@@ -30,20 +25,20 @@ try
     sSubject = ['Vix Index Push ', datestr(now, 'yyyy-mm-dd')];
     
     if str2double(datestr(now, 'hhMM')) > 1300
-        sContent = 'ÏÂÎç';
+        sContent = 'ä¸‹åˆ';
     else
-        sContent = 'ÉÏÎç';
+        sContent = 'ä¸Šåˆ';
     end
-    sContent = ['ĞËÒµÖ¤È¯iVixÖ¸ÊıÊµÊ±¼ÆËã½á¹û ÓÚÃ÷Ã÷ ', datestr(now, 'yyyy-mm-dd'), ' ', sContent];
+    sContent = ['iVixæŒ‡æ•°å®æ—¶è®¡ç®—ç»“æœ ', datestr(now, 'yyyy-mm-dd'), ' ', sContent];
     
     for iAdress = 1 : length(sMail2Sent)
         sendmail(sMail2Sent{iAdress}, sSubject, sContent, cAttachments);
     end
     
 catch err
-    disp('·¢ÉúÒì³£');
+    disp('å‘ç”Ÿå¼‚å¸¸');
     for i = 1:size(err.stack,1)
-        StrTemp = ['FunName£º',err.stack(i).name,' Line£º',num2str(err.stack(i).line)];
+        StrTemp = ['FunNameï¼š',err.stack(i).name,' Lineï¼š',num2str(err.stack(i).line)];
         disp(StrTemp);
     end
 end
