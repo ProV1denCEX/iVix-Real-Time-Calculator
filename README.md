@@ -1,4 +1,4 @@
-# iVix_Real_Time_Calculator
+# iVix Real Time Calculator
 Get China option market data in real time and calculate ivix index.
 
 ## Data source
